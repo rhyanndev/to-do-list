@@ -12,7 +12,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(40, 40, 184);
+    background-color: rgb(8, 8, 22);
 }
 
 .container{
@@ -104,6 +104,13 @@ body{
     font-size: 22px;
     font-weight: 500;
     text-transform: capitalize;
+}
+
+#dataHoraAtual {
+    margin-top: 5px;
+    color: #06283D;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .weather-details{

@@ -4,9 +4,26 @@ const weatherBox = document.querySelector('.weather-box');
 const weatherDetails = document.querySelector('.weather-details');
 const error404 = document.querySelector('.not-found');
 
+
+function mostrarDataHoraAtual() {
+    var dataAtual = new Date();
+    var dia = dataAtual.getDate();
+    var mes = dataAtual.getMonth() + 1;
+    var ano = dataAtual.getFullYear();
+    var hora = dataAtual.getHours();
+    var minuto = dataAtual.getMinutes();
+    //var segundo = dataAtual.getSeconds();
+    
+    var dataHoraFormatada = `${dia}/${mes}/${ano} ${hora}:${minuto}`;
+    
+    // Atualizar o conteúdo do elemento HTML com a data e hora atual
+    document.getElementById('dataHoraAtual').textContent = dataHoraFormatada;
+}
+
+
 search.addEventListener('click', ()=> {
 
-    const APIKey = 'Sua Chave API';
+    const APIKey = 'sua api key';
     const city = document.querySelector('.search-box input').value;
 
     if(city === '')
@@ -72,6 +89,9 @@ search.addEventListener('click', ()=> {
 
 
         });
+
+        mostrarDataHoraAtual();
+        setInterval(mostrarDataHoraAtual, 1000);
 
 
 });

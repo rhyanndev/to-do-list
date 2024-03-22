@@ -1,6 +1,14 @@
 const localStorageKey = 'to-do-list-gn'
 
 
+document.addEventListener('keypress', function(event) {
+    if(event.key === 'Enter'){  
+
+        newTask();
+
+    }
+})
+
 
 function newTask(){
     let input = document.getElementById('input-new-task');
@@ -47,7 +55,7 @@ function showValues(){
     list.innerHTML = '';
     for(let i = 0; i < values.length; i++){
 
-        list.innerHTML += `<li>${values[i]['name']}<button id='btn-ok'onclick='removeItem("${values[i]['name']}")' ></button></li>`
+        list.innerHTML += `<li>${values[i]['name']}<button id='btn-ok'onclick='removeItem("${values[i]['name']}")' >X</button></li>`
     }
 }
 
